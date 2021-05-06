@@ -1,8 +1,11 @@
+import com.yazantarifi.android.template.ApplicationInfo
 
 plugins {
     id(ApplicationPlugins.androidApplicationPlugin)
     kotlin(ApplicationPlugins.kotlinAndroidPlugin)
     kotlin(ApplicationPlugins.kotlinKaptPlugin)
+    id(ApplicationPlugins.RealmPlugin)
+    id(ApplicationPlugins.navigationPlugin)
 }
 
 val googleServicesFile = File("google-services.json")
@@ -12,15 +15,21 @@ if (googleServicesFile.exists()) {
 }
 
 android {
-    compileSdkVersion(30)
+
+    compileSdkVersion(ApplicationInfo.ApplicationTargetVersion)
+    buildToolsVersion(ApplicationInfo.buildToolsVersion)
+    useLibrary(ApplicationInfo.httpLegacy)
 
     defaultConfig {
-        applicationId("com.template.android.app")
-        minSdkVersion(23)
-        targetSdkVersion(30)
-        versionCode(1)
-        versionName("1.0")
-        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
+        applicationId(ApplicationInfo.ApplicationPackageName)
+        minSdkVersion(ApplicationInfo.ApplicationMinSdkVersion)
+        targetSdkVersion(ApplicationInfo.ApplicationTargetVersion)
+        versionCode(ApplicationInfo.ApplicationVersionCode)
+        versionName(ApplicationInfo.ApplicationVersionName)
+        manifestPlaceholders(ApplicationInfo.getManifestPlaceHolders())
+        testInstrumentationRunner(ApplicationInfo.AndroidJunitRunner)
+        resConfigs("en", "ar")
+        multiDexEnabled = true
     }
 
 //    buildTypes {
@@ -29,13 +38,11 @@ android {
 //            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 //        }
 //    }
-//    compileOptions {
-//        sourceCompatibility JavaVersion.VERSION_1_8
-//        targetCompatibility JavaVersion.VERSION_1_8
-//    }
-//    kotlinOptions {
-//        jvmTarget = '1.8'
-//    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {

@@ -9,6 +9,9 @@ object ApplicationPlugins {
     const val kotlinAndroidPlugin = "android"
     const val kotlinKaptPlugin = "kapt"
     const val firebaseCrashlyticsPlugin = "com.google.firebase.crashlytics"
+    const val libraryPlugin = "com.android.library"
+    const val navigationPlugin = "androidx.navigation.safeargs.kotlin"
+    const val RealmPlugin = "realm-android"
 
     const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${ApplicationDependencies.Versions.kotlinVersion}"
     const val gradlePlugin = "com.android.tools.build:gradle:${ApplicationDependencies.Versions.gradlePluginVersion}"
