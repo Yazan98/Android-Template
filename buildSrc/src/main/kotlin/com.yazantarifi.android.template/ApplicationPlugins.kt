@@ -4,8 +4,21 @@
 object ApplicationPlugins {
 
     const val gradleNamePlugin = "gradle-plugin"
+    const val firebaseNamePlugin = "com.google.gms.google-services"
+    const val androidApplicationPlugin = "com.android.application"
+    const val kotlinAndroidPlugin = "android"
+    const val kotlinKaptPlugin = "kapt"
+    const val firebaseCrashlyticsPlugin = "com.google.firebase.crashlytics"
 
     const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${ApplicationDependencies.Versions.kotlinVersion}"
     const val gradlePlugin = "com.android.tools.build:gradle:${ApplicationDependencies.Versions.gradlePluginVersion}"
-    const val kotlinDateTimePlugin = "org.jetbrains.kotlinx:kotlinx-datetime-jvm:${ApplicationDependencies.Versions.kotlinDateTimeJvmVersion}"
+    const val firebasePlugin = "com.google.gms:google-services:${ApplicationDependencies.Versions.firebasePluginVersion}"
+    const val navigationComponentPlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${ApplicationDependencies.Versions.navigationPluginVersion}"
+    const val realmPlugin = "io.realm:realm-gradle-plugin:${ApplicationDependencies.Versions.realmPluginVersion}"
+
+    object ResolverLinks {
+        const val JitpackLink = "https://jitpack.io"
+        const val OssLocalSnapshotLink = "http://oss.jfrog.org/artifactory/oss-snapshot-local"
+        const val gradlePortalLink = "https://plugins.gradle.org/m2/"
+    }
 }
