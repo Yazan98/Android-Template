@@ -21,6 +21,7 @@ buildscript {
         classpath(ApplicationPlugins.firebasePlugin)
         classpath(ApplicationPlugins.navigationComponentPlugin)
         classpath(ApplicationPlugins.realmPlugin)
+        classpath(ApplicationPlugins.firebaseCrashesPlugin)
         classpath(kotlin(ApplicationPlugins.gradleNamePlugin, version = ApplicationDependencies.Versions.gradleKotlinPluginVersion))
     }
 }

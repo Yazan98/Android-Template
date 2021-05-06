@@ -9,7 +9,7 @@ plugins {
 }
 
 val googleServicesFile = File("google-services.json")
-if (googleServicesFile.exists()) {
+if (!googleServicesFile.exists()) {
     apply(plugin = ApplicationPlugins.firebaseNamePlugin)
     apply(plugin = ApplicationPlugins.firebaseCrashlyticsPlugin)
 }

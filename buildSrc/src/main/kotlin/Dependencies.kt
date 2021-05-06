@@ -67,10 +67,11 @@ object ApplicationDependencies {
     const val FirebaseMessaging = "com.google.firebase:firebase-messaging:${Versions.FirebaseMessagingV}"
     const val FirebaseAnalytics = "com.google.firebase:firebase-analytics-ktx:${Versions.FirebaseAnalyticsV}"
     const val FirebaseAuth = "com.google.firebase:firebase-auth-ktx:${Versions.FirebaseAuthV}"
-    const val FirebaseCrashes = "com.google.firebase:firebase-crashlytics-ktx${Versions.FirebaseCrashesV}"
+    const val FirebaseCrashes = "com.google.firebase:firebase-crashlytics-ktx:${Versions.FirebaseCrashesV}"
 
     object Versions {
         const val kotlinVersion = "1.5.0"
+        const val firebaseCrashesPluginV = "2.5.2"
         const val gradlePluginVersion = "4.2.0-rc01"
         const val gradleKotlinPluginVersion = "1.5.0"
         const val firebasePluginVersion = "4.3.5"

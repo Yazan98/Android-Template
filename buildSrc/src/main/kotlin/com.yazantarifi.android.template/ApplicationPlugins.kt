@@ -18,6 +18,7 @@ object ApplicationPlugins {
     const val firebasePlugin = "com.google.gms:google-services:${ApplicationDependencies.Versions.firebasePluginVersion}"
     const val navigationComponentPlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${ApplicationDependencies.Versions.navigationPluginVersion}"
     const val realmPlugin = "io.realm:realm-gradle-plugin:${ApplicationDependencies.Versions.realmPluginVersion}"
+    const val firebaseCrashesPlugin = "com.google.firebase:firebase-crashlytics-gradle:${ApplicationDependencies.Versions.firebaseCrashesPluginV}"
 
     object ResolverLinks {
         const val JitpackLink = "https://jitpack.io"
