@@ -11,3 +11,6 @@ gradleEnterprise {
 
 rootProject.name = "App Template"
 include(":app")
+include(":logic")
+include(":data")
+include(":domain")
