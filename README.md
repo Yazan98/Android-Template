@@ -1,2 +1,5 @@
 # Android-Template
-Android Application Template With Ready Gradle Kotlin DSL Configuration and Starter Code Ready To Code Without Configuration
+
+Android Application Template For Configuring Apps Dependencies
+
+This Template is a Default Template For Gradle Kotlin DSL Configuration so i can Easily apply all plugins, Libraries from Copy Paste This Template in my Projects
