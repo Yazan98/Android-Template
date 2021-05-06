@@ -51,15 +51,15 @@ android {
         }
     }
 
-    productFlavors {
-        create("free") {
-            applicationId = "application.android.free"
-        }
-
-        create("paid") {
-            applicationId = "application.android.paid"
-        }
-    }
+//    productFlavors {
+//        create("free") {
+//            applicationId = "application.android.free"
+//        }
+//
+//        create("paid") {
+//            applicationId = "application.android.paid"
+//        }
+//    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
