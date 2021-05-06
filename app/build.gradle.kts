@@ -6,12 +6,8 @@ plugins {
     kotlin(ApplicationPlugins.kotlinKaptPlugin)
     id(ApplicationPlugins.RealmPlugin)
     id(ApplicationPlugins.navigationPlugin)
-}
-
-val googleServicesFile = File("google-services.json")
-if (!googleServicesFile.exists()) {
-    apply(plugin = ApplicationPlugins.firebaseNamePlugin)
-    apply(plugin = ApplicationPlugins.firebaseCrashlyticsPlugin)
+    id(ApplicationPlugins.firebaseCrashlyticsPlugin)
+    id(ApplicationPlugins.firebaseNamePlugin)
 }
 
 android {
@@ -32,12 +28,39 @@ android {
         multiDexEnabled = true
     }
 
-//    buildTypes {
-//        release {
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
-//    }
+    buildTypes {
+        getByName("debug") {
+            buildConfigField("String", project.property("baseUrl") as String, false.toString())
+            isDebuggable = true
+        }
+
+        create("qa") {
+            buildConfigField("String", project.property("baseUrl") as String, true.toString())
+            isShrinkResources = true
+            isMinifyEnabled = true
+            isUseProguard = true
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
+
+        getByName("release") {
+            buildConfigField("String",  project.property("baseUrl") as String, true.toString())
+            isShrinkResources = true
+            isMinifyEnabled = true
+            isUseProguard = true
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
+    }
+
+    productFlavors {
+        create("free") {
+            applicationId = "application.android.free"
+        }
+
+        create("paid") {
+            applicationId = "application.android.paid"
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -55,4 +78,8 @@ dependencies {
     applyLifecycleConfiguration()
     applyGooglePlayServicesConfiguration()
     applyFirebaseConfiguration()
+
+    api(project(":data"))
+    api(project(":logic"))
+    api(project(":domain"))
 }

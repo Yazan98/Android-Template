@@ -8,8 +8,10 @@ object ApplicationPlugins {
     const val androidApplicationPlugin = "com.android.application"
     const val kotlinAndroidPlugin = "android"
     const val kotlinKaptPlugin = "kapt"
+    const val kotlinKaptNamePlugin = "kotlin-kapt"
     const val firebaseCrashlyticsPlugin = "com.google.firebase.crashlytics"
     const val libraryPlugin = "com.android.library"
+    const val kotlinAndroidPathPlugin = "kotlin-android"
     const val navigationPlugin = "androidx.navigation.safeargs.kotlin"
     const val RealmPlugin = "realm-android"
 

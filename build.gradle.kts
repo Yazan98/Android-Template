@@ -7,7 +7,6 @@ import ApplicationPlugins
 
 buildscript {
 
-    val kotlin_version by extra("1.4.31")
     repositories {
         google()
         mavenCentral()
@@ -24,7 +23,6 @@ buildscript {
         classpath(ApplicationPlugins.realmPlugin)
         classpath(ApplicationPlugins.firebaseCrashesPlugin)
         classpath(kotlin(ApplicationPlugins.gradleNamePlugin, version = ApplicationDependencies.Versions.gradleKotlinPluginVersion))
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
 
@@ -44,6 +42,14 @@ allprojects {
         }
     }
 
+}
+
+subprojects {
+    if (!this.name.equals("app")) {
+        apply(plugin = ApplicationPlugins.libraryPlugin)
+        apply(plugin = ApplicationPlugins.kotlinAndroidPathPlugin)
+        apply(plugin = ApplicationPlugins.kotlinKaptNamePlugin)
+    }
 }
 
 plugins {
