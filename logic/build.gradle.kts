@@ -22,6 +22,7 @@ android {
 
 dependencies {
     applyLifecycleConfiguration()
+    applyDataConfiguration()
     api(project(":domain"))
     api(project(":data"))
 }

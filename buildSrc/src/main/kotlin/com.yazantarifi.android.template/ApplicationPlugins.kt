@@ -9,6 +9,7 @@ object ApplicationPlugins {
     const val kotlinAndroidPlugin = "android"
     const val kotlinKaptPlugin = "kapt"
     const val kotlinKaptNamePlugin = "kotlin-kapt"
+    const val kotlinExtsNamePlugin = "kotlin-android-extensions"
     const val firebaseCrashlyticsPlugin = "com.google.firebase.crashlytics"
     const val libraryPlugin = "com.android.library"
     const val kotlinAndroidPathPlugin = "kotlin-android"

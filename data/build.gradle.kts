@@ -21,6 +21,7 @@ android {
 }
 
 dependencies {
+    applyKotlinCoroutinesConfiguration()
     applyDataConfiguration()
     api(project(":domain"))
 }

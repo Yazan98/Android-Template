@@ -44,11 +44,11 @@ object ApplicationDependencies {
 
     // Data Configuration
     const val Retrofit = "com.squareup.retrofit2:retrofit:${Versions.RetrofitV}"
-    const val RetrofitRxJavaAdapter = "com.squareup.retrofit2:retrofit:${Versions.RetrofitV}"
-    const val RetrofitIntercenptor  = "com.squareup.retrofit2:retrofit:${Versions.RetrofitiInterceptorV}"
-    const val retrofitGsonConverter = "com.squareup.retrofit2:retrofit:${Versions.RetrofitGsonAdapterV}"
-    const val RxJava = "com.squareup.retrofit2:retrofit:${Versions.RxJavaV}"
-    const val RxAndroid = "com.squareup.retrofit2:retrofit:${Versions.RxAndroidV}"
+    const val RetrofitRxJavaAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.RetrofitV}"
+    const val RetrofitIntercenptor  = "com.squareup.okhttp3:logging-interceptor:${Versions.RetrofitiInterceptorV}"
+    const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.RetrofitGsonAdapterV}"
+    const val RxJava = "io.reactivex.rxjava2:rxjava:${Versions.RxJavaV}"
+    const val RxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.RxAndroidV}"
 
     // Lifecycle
     const val LifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
@@ -98,17 +98,17 @@ object ApplicationDependencies {
         const val frescoVersion = "2.1.0"
         const val navigationSystemVersion = "2.2.0-rc04"
 
-        const val RetrofitV = "2.6.1"
+        const val RetrofitV = "2.9.0"
         const val RxJavaV = "2.2.11"
         const val RxAndroidV = "2.1.1"
         const val RetrofitiInterceptorV = "3.12.1"
         const val RetrofitGsonAdapterV = "2.5.0"
-        const val lifecycleVersion = "2.3.1"
+        const val lifecycleVersion = "2.2.0"
         const val googlePlayServicesV = "16.0.0"
         const val FirebaseAnalyticsV = "18.0.3"
         const val FirebaseMessagingV = "21.0.1"
         const val FirebaseAuthV = "20.0.4"
-        const val FirebaseCrashesV = "20.0.4"
+        const val FirebaseCrashesV = "17.4.1"
     }
 
 }

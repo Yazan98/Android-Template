@@ -2,6 +2,7 @@ import com.yazantarifi.android.template.ApplicationInfo
 
 plugins {
     id(ApplicationPlugins.androidApplicationPlugin)
+    id(ApplicationPlugins.kotlinExtsNamePlugin)
     kotlin(ApplicationPlugins.kotlinAndroidPlugin)
     kotlin(ApplicationPlugins.kotlinKaptPlugin)
     id(ApplicationPlugins.RealmPlugin)
@@ -30,12 +31,12 @@ android {
 
     buildTypes {
         getByName("debug") {
-            buildConfigField("String", project.property("baseUrl") as String, false.toString())
+            buildConfigField("String", "baseUrl", project.property("baseUrl") as String)
             isDebuggable = true
         }
 
         create("qa") {
-            buildConfigField("String", project.property("baseUrl") as String, true.toString())
+            buildConfigField("String", "baseUrl", project.property("baseUrl") as String)
             isShrinkResources = true
             isMinifyEnabled = true
             isUseProguard = true
@@ -43,23 +44,13 @@ android {
         }
 
         getByName("release") {
-            buildConfigField("String",  project.property("baseUrl") as String, true.toString())
+            buildConfigField("String", "baseUrl", project.property("baseUrl") as String)
             isShrinkResources = true
             isMinifyEnabled = true
             isUseProguard = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
-
-//    productFlavors {
-//        create("free") {
-//            applicationId = "application.android.free"
-//        }
-//
-//        create("paid") {
-//            applicationId = "application.android.paid"
-//        }
-//    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
